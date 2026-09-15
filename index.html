@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>MyLore — Descubra o que está travando seu inglês</title>
+<meta name="description" content="Enfrente situações reais em inglês e descubra seu nível estimado, seu principal gargalo e o próximo passo para evoluir.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="site-header" id="siteHeader">
+  <div class="header-inner">
+    <a href="#" class="brand" id="brandHome" aria-label="MyLore — início">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <circle cx="12" cy="12" r="9.25" stroke="currentColor" stroke-width="1.2"/>
+        <path d="M12 3.5V6M12 18V20.5M3.5 12H6M18 12H20.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+        <path d="M15.2 8.8L13 13L8.8 15.2L11 11L15.2 8.8Z" fill="currentColor"/>
+      </svg>
+      <span>MyLore</span>
+    </a>
+    <nav class="header-nav">
+      <button class="link-btn" id="howItWorksBtn" type="button">Como funciona</button>
+      <button class="btn btn-outline btn-small" id="headerCta" type="button">Fazer diagnóstico →</button>
+    </nav>
+  </div>
+  <div class="progress-shell" id="progressShell" hidden>
+    <div class="progress-label" id="progressLabel">YOUR JOURNEY</div>
+    <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+  </div>
+</header>
+
+<main id="app"></main>
+
+<div class="modal-overlay" id="howItWorksModal" hidden>
+  <div class="modal-card" role="dialog" aria-modal="true" aria-label="Como funciona">
+    <button class="modal-close" id="modalClose" aria-label="Fechar">×</button>
+    <p class="eyebrow">COMO FUNCIONA</p>
+    <h3 class="modal-title">Três passos até seu mapa</h3>
+    <div class="how-steps">
+      <div class="how-step">
+        <span class="how-num">01</span>
+        <div>
+          <strong>Converse</strong>
+          <p>Situações reais de inglês, como numa conversa de verdade.</p>
+        </div>
+      </div>
+      <div class="how-step">
+        <span class="how-num">02</span>
+        <div>
+          <strong>Descubra seu gargalo</strong>
+          <p>Identificamos o que está te travando — não só o seu nível.</p>
+        </div>
+      </div>
+      <div class="how-step">
+        <span class="how-num">03</span>
+        <div>
+          <strong>Receba seu mapa</strong>
+          <p>Um diagnóstico personalizado com o seu próximo passo.</p>
+        </div>
+      </div>
+    </div>
+    <button class="btn btn-primary btn-full" id="modalStart" type="button">DESCOBRIR MEU DIAGNÓSTICO →</button>
+  </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>

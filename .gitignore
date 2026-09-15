@@ -1,0 +1,22 @@
+# Vercel
+.vercel
+
+# Dependencies (not used by this static project, kept for safety if added later)
+node_modules
+
+# Environment variables / secrets
+.env
+.env.*
+!.env.example
+
+# Build artifacts
+dist
+build
+.output
+
+# OS / editor junk
+.DS_Store
+Thumbs.db
+.vscode
+.idea
+*.log
