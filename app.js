@@ -75,6 +75,40 @@
     console.log("[track]", eventName, data);
   }
 
+  function saveResponseToSheet() {
+    const a = state.answers;
+    const p = state.profile;
+    const payload = {
+      name: a.name,
+      location: a.location,
+      job: a.job,
+      hobbies: a.hobbies,
+      brazilRecommendation: a.brazilRecommendation,
+      listeningReply: a.listeningReply,
+      listeningSkipped: a.listeningSkipped,
+      pain: a.painLabel || a.pain,
+      goals: a.goals,
+      goalOther: a.goalOther,
+      obstacle: a.obstacle,
+      obstacleOther: a.obstacleOther,
+      boss1: a.boss1,
+      boss2: a.boss2,
+      boss3: a.boss3,
+      scoreCommunication: state.scores.communication,
+      scoreVocabulary: state.scores.vocabulary,
+      scoreListening: state.scores.listening,
+      scoreSpontaneity: state.scores.spontaneity,
+      profileKey: p ? p.key : "",
+      profileTitle: p ? p.title : "",
+      estimatedLevel: p ? p.levelLabel : "",
+    };
+    fetch("/api/save-response", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload),
+    }).catch(() => {});
+  }
+
   /* ------------------------------------------------------------------
    * STATE
    * ------------------------------------------------------------------ */
@@ -920,6 +954,7 @@
     `);
 
     computeResults();
+    saveResponseToSheet();
 
     (async () => {
       const nodes = qsa("[data-item]", qs("#analysisList"));
